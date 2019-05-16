@@ -1,16 +1,30 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
-import { getPostsByCategory } from '../PostsAPI';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { clickButton } from '../store/actions';
+// import { getPostsByCategory } from '../PostsAPI';
 
 class Categories extends Component {
+  state = {
+    inputValue: ''
+  };
+
+  inputChange = (event) => {
+    this.setState({
+      inputValue: event.target.value
+    })
+  };
+
+  /*
   constructor(props) {
     super(props);
     this.state = {
-      params: '',
+      params: null,
       posts: []
     };
 
     this.getPosts = this.getPosts.bind(this);
+    this.getClick = this.getClick.bind(this);
   }
 
   componentDidMount() {
@@ -29,12 +43,26 @@ class Categories extends Component {
       this.setState({ posts: res });
     });
   }
+*/
 
   render() {
+    const { clickButton, newValue } = this.props;
+    const { inputValue } = this.state;
+
     return (
-      <div className="search-books">Categorias</div>
+      <div>
+        <h1 className="search-books">{ newValue }</h1>
+
+        <div>
+          <input onChange={ this.inputChange } type='text' value={ inputValue } />
+          <button onClick={ () => clickButton(inputValue) }>Clicar</button>
+        </div>
+      </div>
     );
   }
 }
 
-export default Categories;
+const mapStateToProps = store => ({ newValue: store.clickState.newValue });
+const mapDispatchToProps = dispatch => bindActionCreators({ clickButton }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Categories);
