@@ -1,26 +1,29 @@
-
-const api = "https://reactnd-books-api.udacity.com"
-
+const api = "https://api-server-udacity.azurewebsites.net";
 
 // Generate a unique token for storing your bookshelf data on the backend server.
-let token = localStorage.token
+let token = localStorage.token;
 if (!token)
   token = localStorage.token = Math.random().toString(36).substr(-8)
 
 const headers = {
   'Accept': 'application/json',
   'Authorization': token
-}
+};
 
-export const get = (bookId) =>
-  fetch(`${api}/books/${bookId}`, { headers })
+export const getCategorie = (category) =>
+  fetch(`${api}/${category}/posts`, { headers })
     .then(res => res.json())
-    .then(data => data.book)
+    .then(data => data);
 
-export const getAll = () =>
-  fetch(`${api}/books`, { headers })
+export const getAllCategorie = () =>
+  fetch(`${api}/categories`, { headers })
     .then(res => res.json())
-    .then(data => data.books)
+    .then(data => data);
+
+export const getAllPosts = () =>
+  fetch(`${api}/categories`, { headers })
+    .then(res => res.json())
+    .then(data => data);
 
 export const update = (book, shelf) =>
   fetch(`${api}/books/${book.id}`, {
@@ -30,7 +33,7 @@ export const update = (book, shelf) =>
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({ shelf })
-  }).then(res => res.json())
+  }).then(res => res.json());
 
 export const search = (query) =>
   fetch(`${api}/search`, {
@@ -40,4 +43,4 @@ export const search = (query) =>
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({ query })
-  }).then(res => res.json()).then(data => data.books)
+  }).then(res => res.json()).then(data => data);

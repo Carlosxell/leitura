@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { getAllCategorie } from '../PostsAPI';
+// import { getAll } from '../PostsAPI';
 
-class HomePage extends Component {
+class Posts extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      all: [],
-      read: [],
-      wantToRead: [],
-      currentlyReading: [],
-    };
+    this.state = {};
 
     this.updateList = this.updateList.bind(this);
   };
@@ -19,13 +14,13 @@ class HomePage extends Component {
     this.updateList();
   }
 
-  async updateList() {}
+  updateList() {}
 
   render() {
     return (
       <div className="list-books">
         <div className="open-search">
-          <h1>Home</h1>
+          <h1>Posts</h1>
 
           <Link to={'search'}>Adicionar um post</Link>
         </div>
@@ -34,4 +29,4 @@ class HomePage extends Component {
   }
 }
 
-export default HomePage;
+export default Posts;

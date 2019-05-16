@@ -1,0 +1,28 @@
+.menu {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  min-height: 3.75rem;
+}
+
+.menu_item {}
+
+.menu_link {
+  display: inline-block;
+  font-size: 1.125rem;
+  text-decoration: none;
+  padding: 1rem 0;
+  transition: opacity .15s linear;
+}
+
+.menu_link:active,
+.menu_link:focus,
+.menu_link:hover,
+.menu_link:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu_link:hover {
+  opacity: .75;
+}
