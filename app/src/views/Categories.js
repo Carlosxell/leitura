@@ -9,11 +9,7 @@ class Categories extends Component {
     inputValue: ''
   };
 
-  inputChange = (event) => {
-    this.setState({
-      inputValue: event.target.value
-    })
-  };
+  inputChange = (event) => this.setState({ inputValue: event.target.value });
 
   /*
   constructor(props) {

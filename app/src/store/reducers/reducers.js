@@ -1,8 +1,8 @@
 import { clickReducer } from './clickReducer';
-import { OtherReducer } from './otherReducer';
+import { Categories } from './categories';
 import { combineReducers } from 'redux';
 
 export const Reducers = combineReducers({
   clickState: clickReducer,
-  otherState: OtherReducer
+  getCategories: Categories
 });

@@ -18,8 +18,8 @@ class HomePage extends Component {
 
   async getPosts() {
     await getAllPosts().then(res => {
-      return console.info(res, 'resposta de todos os posts');
-    })
+      return console.info(res, 'resposta de todos os posts na home');
+    });
   }
 
   render() {

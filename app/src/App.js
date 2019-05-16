@@ -6,15 +6,28 @@ import HomePage from './views/Home';
 import Comments from './views/Comments';
 import Posts from './views/Posts';
 import Header from './Components/Header/Header';
+import { getAllPosts } from './PostsAPI';
 
-class BooksApp extends React.Component {
-  state = {};
+class ReadApp extends React.Component {
+  state = {
+    categories: [],
+  };
+
+  componentDidMount() {
+    return this.callCategories()
+  }
+
+  async callCategories() {
+    await getAllPosts().then(resp => {
+      this.setState({ categories: resp });
+    });
+  }
 
   render() {
     return (
       <BrowserRouter>
         <div className="app">
-          <Header />
+          <Header listCategories={ this.state.categories } />
 
           <main className='content'>
             <Route component={ HomePage } exact path='/' />
@@ -28,4 +41,4 @@ class BooksApp extends React.Component {
   }
 }
 
-export default BooksApp
+export default ReadApp;
