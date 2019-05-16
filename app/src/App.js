@@ -16,7 +16,7 @@ class BooksApp extends React.Component {
         <div className="app">
           <Header />
 
-          <main className=''>
+          <main className='content'>
             <Route component={ HomePage } exact path='/' />
             <Route component={ Posts } exact path='/posts' />
             <Route component={ Comments } exact path='/comments' />

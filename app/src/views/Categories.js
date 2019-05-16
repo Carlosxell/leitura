@@ -1,25 +1,34 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
-// import { getAll, search } from '../PostsAPI';
+import { getPostsByCategory } from '../PostsAPI';
 
 class Categories extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      params: ''
+      params: '',
+      posts: []
     };
 
-    this.getResults = this.getResults.bind(this);
-    this.updateList = this.updateList.bind(this);
+    this.getPosts = this.getPosts.bind(this);
   }
 
   componentDidMount() {
-    this.setState({ params: this.props.match.params })
+    this.setState({ params: this.props.match.params });
+    return this.getPosts(this.props.match.params.id);
   }
 
-  updateList() {}
+  componentWillReceiveProps(nextProps, nextContext) {
+    this.setState({ params: this.props.match.params });
+    return this.getPosts(this.props.match.params.id);
+  }
 
-  getResults(event) {}
+  getPosts(category) {
+    getPostsByCategory(category).then(res => {
+      console.info(res, 'resposta de posts da categoria');
+      this.setState({ posts: res });
+    });
+  }
 
   render() {
     return (
