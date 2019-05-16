@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { getAllCategorie } from '../PostsAPI';
+import { getAllPosts } from '../PostsAPI';
 
 class HomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      all: [],
-      read: [],
-      wantToRead: [],
-      currentlyReading: [],
+      posts: []
     };
 
-    this.updateList = this.updateList.bind(this);
+    this.getPosts = this.getPosts.bind(this);
   };
 
   componentDidMount() {
-    this.updateList();
+    return this.getPosts();
   }
 
-  async updateList() {}
+  async getPosts() {
+    await getAllPosts().then(res => {
+      return console.info(res, 'resposta de todos os posts na home');
+    });
+  }
 
   render() {
     return (
