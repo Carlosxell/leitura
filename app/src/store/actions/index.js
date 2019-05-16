@@ -5,7 +5,6 @@ export const clickButton = value => ({
   newValue: value
 });
 
-export const getCategories = value => ({
-  type: GET_CATEGORIES,
-  allCategories: value
-});
+export const getCategories = (value) => {
+  return (dispatch) => dispatch({ type: GET_CATEGORIES, allCategories: value });
+};
