@@ -1,5 +1,5 @@
 ### Leitura
-Projeto que lê posts de uma API servida.
+Projeto para exibição e criação de postagens de acordo com 
 
 #### `yarn install`
 Rode o comando como administrador para instalar as dependências
