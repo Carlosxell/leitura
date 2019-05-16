@@ -1,28 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="10ace60f-62f0-4c1e-8c3c-e386f0afd506" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/Components/Header/Header.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Components/Header/Header.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Components/Menu/Menu.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/Components/Menu/Menu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/views/Categories.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/views/Comments.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/views/Posts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-server/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/api-server/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/app/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/BooksAPI.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/PostsAPI.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/CardBook.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/SelectType.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/views/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/views/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/views/Search.js" beforeDir="false" />
-    </list>
+    <list default="true" id="10ace60f-62f0-4c1e-8c3c-e386f0afd506" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -88,8 +67,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/Components/Menu/Menu.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+            <state relative-caret-position="175">
+              <caret line="14" column="34" lean-forward="true" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -262,12 +241,12 @@
       <workItem from="1557936038020" duration="48000" />
       <workItem from="1557941988440" duration="14000" />
       <workItem from="1557945902743" duration="51000" />
-      <workItem from="1557961523697" duration="6941000" />
+      <workItem from="1557961523697" duration="7066000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8449000" />
+    <option name="totallyTimeSpent" value="8574000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
@@ -431,8 +410,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/Components/Menu/Menu.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+        <state relative-caret-position="175">
+          <caret line="14" column="34" lean-forward="true" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
         </state>
       </provider>
     </entry>
