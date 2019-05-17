@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "moment": "^2.24.0",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.8.6",
@@ -13,7 +14,8 @@
     "react-thunk": "^1.0.0",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
-    "seamless-immutable": "^7.1.4"
+    "seamless-immutable": "^7.1.4",
+    "sort-by": "^1.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
