@@ -6,29 +6,34 @@ import { connect } from 'react-redux'
 
 class CategoriasList extends Component {
   componentDidMount() {
-    this.props.callCarregarCategorias()
+    this.props.callCarregarCategorias();
   }
 
   handleSelecionarCategoria = (e) => {
-    e.preventDefault()
+    let categoria = e.target.attributes.getNamedItem('categoria').value;
 
-    let categoria = e.target.attributes.getNamedItem('categoria').value
-
-    this.props.selecionarCategoria(categoria)
-
-    window.location = '/' + categoria
-  }
+    e.preventDefault();
+    this.props.selecionarCategoria(categoria);
+    window.location = '/' + categoria;
+  };
 
   render() {
-    let categorias = this.props.categorias.categorias
+    let categorias = this.props.categorias.categorias;
 
     return (
       <section className="categorias-wrapper">
-        <h3>Categorias</h3>
-        <ul className="categorias-list">
-          <li><Link to="/">Todas</Link></li>
+        <ul className="menu">
+          <li className='menu_item'>
+            <Link className='menu_link' to="/">Home</Link>
+          </li>
+
           {categorias !== undefined && categorias.map((categoria) => (
-            <li key={categoria.name}><Link to="#" onClick={this.handleSelecionarCategoria} categoria={categoria.name}>{capitalize(categoria.name)}</Link></li>
+            <li className='menu_item' key={categoria.name}>
+              <Link onClick={ this.handleSelecionarCategoria }
+                    className='menu_link'
+                    categoria={ categoria.name }
+                    to="#">{capitalize(categoria.name)}</Link>
+            </li>
           ))}
         </ul>
       </section>
