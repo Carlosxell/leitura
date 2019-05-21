@@ -57,7 +57,7 @@ export const deletePost = (data) => fetch(
     method: 'delete',
     headers: headers
   }
-)
+).then(res => res.json()).then(data => data)
 
 export const getComments = (data) => fetch(
   `${url}/posts/${data}/comments`,
@@ -97,7 +97,7 @@ export const deleteComment = (data) => fetch(
     method: 'delete',
     headers: headers
   }
-)
+).then(res => res.json()).then(data => data)
 
 export const votePost = (data, option, path) => fetch(
   `${url}/${path}/${data}`,
@@ -106,4 +106,4 @@ export const votePost = (data, option, path) => fetch(
     headers: headers,
     body: JSON.stringify(option)
   }
-)
+).then(res => res.json()).then(data => data)

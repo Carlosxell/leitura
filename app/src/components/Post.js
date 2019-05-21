@@ -7,15 +7,23 @@ import Moment from 'moment'
 import Comentarios from './Comentarios'
 
 class Post extends Component {
+  state = {
+    counter: 0
+  };
   componentDidMount() {
     this.props.callCarregarPostagem(this.props.match.params.id)
     this.props.callCarregarComentarios(this.props.match.params.id)
   }
 
   componentWillReceiveProps(nextProps) {
-    let postagem = nextProps.postagem.postagem
+    let newProps = Object.keys(nextProps.postagem.postagem);
+    let oldProps = Object.keys(this.props.postagem.postagem);
 
-    if(postagem.deleted === true) {
+    if(((newProps.length === 0) && (oldProps.length === 0))) {
+      this.setState({ counter: this.state.counter+1 });
+    }
+
+    if((this.state.counter >= 2) && (newProps.length === 0)) {
       window.location = '/erro404'
     }
   }

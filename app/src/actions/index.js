@@ -23,8 +23,8 @@ export function carregarCategorias(categorias) {
 }
 
 export function callCarregarCategorias() {
-  return (dispatch) => {
-    API.getCategories().then(
+  return async (dispatch) => {
+    await API.getCategories().then(
       (response) => dispatch(carregarCategorias(response))
     )
   }
@@ -53,16 +53,16 @@ export function carregarPostagensPorCategoria(categoria, postagens) {
 }
 
 export function callCarregarPostagens() {
-  return (dispatch) => {
-    API.getPosts().then(
+  return async (dispatch) => {
+    await API.getPosts().then(
       (response) => dispatch(carregarPostagens(response))
     )
   }
 }
 
 export function callCarregarPostagensPorCategoria(categoria) {
-  return (dispatch) => {
-    API.getPostsByCategory(categoria).then(
+  return async (dispatch) => {
+    await API.getPostsByCategory(categoria).then(
       (response) => dispatch(carregarPostagensPorCategoria(categoria, response))
     )
   }
@@ -83,24 +83,24 @@ export function carregarPostagem(postagem) {
 }
 
 export function callCarregarPostagem(id) {
-  return (dispatch) => {
-    API.getPost(id).then(
+  return async (dispatch) => {
+    await API.getPost(id).then(
       (response) => dispatch(carregarPostagem(response))
     )
   }
 }
 
 export function callCriarPostagem(postagem) {
-  return (dispatch) => {
-    API.createPost(postagem).then(
+  return async (dispatch) => {
+    await API.createPost(postagem).then(
       (response) => dispatch(carregarPostagem(response))
     )
   }
 }
 
 export function callEditarPostagem(postagem) {
-  return (dispatch) => {
-    API.editPost(postagem).then(
+  return async (dispatch) => {
+    await API.editPost(postagem).then(
       (response) => dispatch(carregarPostagem(response))
     )
   }
@@ -114,8 +114,8 @@ export function excluirPostagem(id) {
 }
 
 export function callExcluirPostagem(id) {
-  return (dispatch) => {
-    API.deletePost(id).then(
+  return async (dispatch) => {
+    await API.deletePost(id).then(
       () => dispatch(excluirPostagem(id))
     )
   }
@@ -130,8 +130,8 @@ export function carregarComentarios(id, comentarios) {
 }
 
 export function callCarregarComentarios(id) {
-  return (dispatch) => {
-    API.getComments(id).then(
+  return async (dispatch) => {
+    await API.getComments(id).then(
       (response) => dispatch(carregarComentarios(id, response))
     )
   }
@@ -146,24 +146,24 @@ export function carregarComentario(id, comentario) {
 }
 
 export function callCarregarComentario(id) {
-  return (dispatch) => {
-    API.getComment(id).then(
+  return async (dispatch) => {
+    await API.getComment(id).then(
       (response) => dispatch(carregarComentario(id, response))
     )
   }
 }
 
 export function callCriarComentario(id) {
-  return (dispatch) => {
-    API.createComment(id).then(
+  return async (dispatch) => {
+    await API.createComment(id).then(
       (response) => dispatch(carregarComentario(id, response))
     )
   }
 }
 
 export function callEditarComentario(comentario) {
-  return (dispatch) => {
-    API.editComment(comentario).then(
+  return async (dispatch) => {
+    await API.editComment(comentario).then(
       (response) => dispatch(carregarComentario(comentario.id, response))
     )
   }
@@ -176,8 +176,8 @@ export function excluirComentario(id) {
 }
 
 export function callExcluirComentario(id) {
-  return (dispatch) => {
-    API.deleteComment(id).then(
+  return async (dispatch) => {
+    await API.deleteComment(id).then(
       () => dispatch(excluirComentario(id))
     )
   }
@@ -202,8 +202,8 @@ export function votar(id, voto, path, fromPost) {
 export function callVotar(id, data, path, fromPost) {
   let voto = (data.option === 'upVote') ? 1 : -1
 
-  return (dispatch) => {
-    API.votePost(id, data, path).then(
+  return async (dispatch) => {
+    await API.votePost(id, data, path).then(
       () => dispatch(votar(id, voto, path, fromPost))
     )
   }
