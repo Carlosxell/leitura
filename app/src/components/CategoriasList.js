@@ -1,20 +1,39 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { capitalize } from '../utils/helpers'
 import { callCarregarCategorias, selecionarCategoria } from '../actions'
 import { connect } from 'react-redux'
 
 class CategoriasList extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentWillReceiveProps(nextProps, nextContext) {
+    console.info(this.props.history, 'histórico');
+
+    this.props.history.listen((data, push) => {
+      console.info(this.props.categorias, 'categorias');
+
+      if(data.path === '/react') return this.props.selecionarCategoria('react');
+      if(data.path === '/redux') return this.props.selecionarCategoria('redux');
+      if(data.path === '/udacity') return this.props.selecionarCategoria('udacity');
+    });
+  }
+
+  componentWillMount() {
+  }
+
   componentDidMount() {
     this.props.callCarregarCategorias();
   }
 
   handleSelecionarCategoria = (e) => {
     let categoria = e.target.attributes.getNamedItem('categoria').value;
-
-    e.preventDefault();
     this.props.selecionarCategoria(categoria);
-    window.location = '/' + categoria;
+
+    // e.preventDefault();
+    // window.location = '/' + categoria;
   };
 
   render() {
@@ -32,7 +51,7 @@ class CategoriasList extends Component {
               <Link onClick={ this.handleSelecionarCategoria }
                     className='menu_link'
                     categoria={ categoria.name }
-                    to="#">{capitalize(categoria.name)}</Link>
+                    to={`${categoria.name}`}>{capitalize(categoria.name)}</Link>
             </li>
           ))}
         </ul>
@@ -46,4 +65,4 @@ const mapStateToProps = ({ categoria, categorias }) => ({
   categorias
 })
 
-export default connect(mapStateToProps, { callCarregarCategorias, selecionarCategoria })(CategoriasList)
+export default connect(mapStateToProps, { callCarregarCategorias, selecionarCategoria })(withRouter(CategoriasList))
