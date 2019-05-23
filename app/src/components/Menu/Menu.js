@@ -2,29 +2,23 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Link, withRouter } from "react-router-dom";
-import { clickButton } from '../../actions';
+import { clickButton, getCategories } from '../../actions';
 import './Menu.css';
 
 class Menu extends Component {
-  /*
-    constructor(props) {
-      super(props);
-
-      this.state = {};
-    }
-  */
-
   componentWillMount() {
+    this.props.getCategories();
+
     this.props.history.listen((location, action) => {
       console.info(location, 'location');
       console.info(action, 'action');
 
-      this.props.clickButton(Math.random().toString(36).substr(-8))
+      this.props.clickButton(Math.random().toString(36).substr(-8));
     });
   }
 
   render() {
-    const { newValue } = this.props;
+    const { newValue, list } = this.props;
 
     return(
       <ul className='menu'>
@@ -56,7 +50,7 @@ class Menu extends Component {
   }
 }
 
-const mapStateToProps = store => ({ newValue: store.clickState.newValue });
-const mapDispatchToProps = dispatch => bindActionCreators({ clickButton }, dispatch);
+const mapStateToProps = store => ({ newValue: store.clickState.newValue, list: store.getCategories.list });
+const mapDispatchToProps = dispatch => bindActionCreators({ clickButton, getCategories }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Menu));
