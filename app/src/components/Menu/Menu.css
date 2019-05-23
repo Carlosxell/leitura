@@ -12,8 +12,10 @@
 .menu_item {}
 
 .menu_link {
+  color: #fff;
   display: inline-block;
   font-size: 1.125rem;
+  font-weight: 500;
   text-decoration: none;
   padding: 1rem 0;
   transition: opacity .15s linear;

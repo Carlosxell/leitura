@@ -11,12 +11,19 @@ class Menu extends Component {
         <li className='menu_item'>
           <Link className='menu_link' to={'/'}>Home</Link>
         </li>
+
+        <li className='menu_item'>
+          <Link className='menu_link' to={'/add-post'}>Add Post</Link>
+        </li>
+
         <li className='menu_item'>
           <Link className='menu_link' to={'/categories'}>Categorias</Link>
         </li>
+
         <li className='menu_item'>
           <Link className='menu_link' to={'/comments'}>Comentários</Link>
         </li>
+
         <li className='menu_item'>
           <Link className='menu_link' to={'/posts'}>Posts</Link>
         </li>

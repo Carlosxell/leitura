@@ -1,9 +1,23 @@
 import React, { Component } from 'react';
+import { withRouter } from "react-router-dom";
 import Menu from '../Menu/Menu';
 import './Header.css';
 
 class Header extends Component {
-  state = {};
+/*
+  constructor(props) {
+    super(props);
+
+    this.state = {};
+  }
+*/
+
+  componentWillMount() {
+    this.props.history.listen((location, action) => {
+      console.info(location, 'location');
+      console.info(action, 'action');
+    });
+  }
 
   render() {
     return(
@@ -16,4 +30,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default withRouter(Header);

@@ -11,8 +11,8 @@ body, .app {
 }
 
 .app {
-  box-shadow: 0 0 .75rem .5rem #ccc;
   max-width: 48rem;
   margin: 5rem auto 0;
   min-height: calc(100vh - 6rem);
+  padding: 1.25rem;
 }

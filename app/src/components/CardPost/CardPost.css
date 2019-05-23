@@ -1,0 +1,40 @@
+.cardPost {
+  box-shadow: 0 0 .325rem .125rem rgba(0, 0, 0, .3);
+  border-radius: .25rem;
+  padding: .75rem;
+}
+
+.cardPost_content {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardPost_content_wrap {
+  display: inline-block;
+  height: 6.25rem;
+  width: 6.25rem;
+}
+
+.cardPost_content_wrap_img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.cardPost_content_info {
+  width: calc(100% - 8rem);
+}
+
+.cardPost_content_info_title {
+  border-bottom: .063rem solid rgba(0, 0, 0, .4);
+  display: inline-block;
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-bottom: .5rem;
+  padding-bottom: .125rem;
+}
+
+.cardPost_content_info_text {
+  font-size: .75rem;
+  font-weight: 400;
+}

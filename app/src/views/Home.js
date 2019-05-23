@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CardPost from '../components/CardPost/CardPost';
 // import { Link } from 'react-router-dom';
 
 class HomePage extends Component {
@@ -17,8 +18,8 @@ class HomePage extends Component {
 
   render() {
     return (
-      <div className="">
-        <h1>Home</h1>
+      <div className='Home'>
+        <CardPost />
       </div>
     );
   }
