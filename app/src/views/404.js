@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 
-class HomePage extends Component {
+class Error extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -10,18 +10,18 @@ class HomePage extends Component {
   };
 
   componentDidMount() {
-    return this.updateList();
+    this.updateList();
   }
 
-  async updateList() {}
+  updateList() {}
 
   render() {
     return (
       <div className="">
-        <h1>Home</h1>
+        <h1>404 [ Error ]</h1>
       </div>
     );
   }
 }
 
-export default HomePage;
+export default Error;
