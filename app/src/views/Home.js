@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import CardPost from '../components/CardPost/CardPost';
 // import { Link } from 'react-router-dom';
 
@@ -17,12 +18,17 @@ class HomePage extends Component {
   async updateList() {}
 
   render() {
+    const { newValue } = this.props;
+
     return (
       <div className='Home'>
+        <h1 style={{ paddingBottom: '20px' }}>{ newValue }</h1>
         <CardPost />
       </div>
     );
   }
 }
 
-export default HomePage;
+const mapStateToProps = store => ({ newValue: store.clickState.newValue });
+
+export default connect(mapStateToProps)(HomePage);
