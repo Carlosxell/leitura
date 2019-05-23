@@ -14,7 +14,7 @@ export const getCategories = () => fetch(
   {
     headers: headers,
   }
-).then(res => res.json())
+).then(res => res.json()).then(data => data.categories)
 
 export const getPosts = () => fetch(
   `${url}/posts`,
