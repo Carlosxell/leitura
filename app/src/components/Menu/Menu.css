@@ -19,6 +19,7 @@
   text-decoration: none;
   padding: 1rem 0;
   transition: opacity .15s linear;
+  text-transform: capitalize;
 }
 
 .menu_link:active,

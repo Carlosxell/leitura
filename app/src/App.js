@@ -20,7 +20,7 @@ class PostsApp extends React.Component {
         <div className="app">
           <Switch>
             <Route component={ HomePage } exact path='/' />
-            <Route component={ Posts } exact path='/posts' />
+            <Route component={ Posts } exact path='/posts/:path' />
             <Route component={ AddPosts } exact path='/add-posts' />
             <Route component={ Error } exact path='/error' />
             {/*<Redirect from='*' to='/' />*/}

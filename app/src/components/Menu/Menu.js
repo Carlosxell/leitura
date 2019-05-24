@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+// import { bindActionCreators } from 'redux';
 import { Link, withRouter } from "react-router-dom";
 import { clickButton, handleGetCategory } from '../../actions';
 import './Menu.css';
@@ -20,7 +20,7 @@ class Menu extends Component {
   }
 
   render() {
-    const { newValue } = this.props;
+    const { newValue, list } = this.props;
 
     return(
       <ul className='menu'>
@@ -32,27 +32,21 @@ class Menu extends Component {
           <Link className='menu_link' to={'/add-post'}>Add Post</Link>
         </li>
 
-        <li className='menu_item'>
-          <Link className='menu_link' to={'/categories'}>Categorias</Link>
-        </li>
+        { list.map((item, ind) => (
+          <li className='menu_item' key={ ind }>
+            <Link className='menu_link' to={`/posts/${ item.path }`}>{ item.name }</Link>
+          </li>
+        )) }
 
         <li className='menu_item'>
-          <Link className='menu_link' to={'/comments'}>Comentários</Link>
-        </li>
-
-        <li className='menu_item'>
-          <Link className='menu_link' to={'/posts'}>Posts</Link>
-        </li>
-
-        <li className='menu_item'>
-          <Link className='menu_link' to={'/posts'}>{ newValue }</Link>
+          <Link className='menu_link' to={'/'}>{ newValue }</Link>
         </li>
       </ul>
     );
   }
 }
 
-const mapStateToProps = store => ({ newValue: store.clickState.newValue });
+const mapStateToProps = store => ({ newValue: store.clickState.newValue, list: store.categories.list });
 const mapDispatchToProps = (dispatch) => ({
   clickButton: (value) => dispatch(clickButton(value)),
   categories: () => dispatch(handleGetCategory())

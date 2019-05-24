@@ -4,7 +4,7 @@ const initialState = {
   list: []
 };
 
-export const otherReducer = (state = initialState, action) => {
+export const categories = (state = initialState, action) => {
   switch (action.type) {
     case GET_CATEGORIES:
       return {
