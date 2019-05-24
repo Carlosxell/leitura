@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 
-class Posts extends Component {
+class Edit extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -24,4 +24,4 @@ class Posts extends Component {
   }
 }
 
-export default Posts;
+export default Edit;

@@ -1,11 +1,12 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import './App.css';
 import HomePage from './views/Home';
 import Header from './components/Header/Header';
-import Posts from './views/Posts';
+// import Edit from './views/Edit';
 import AddPosts from './views/AddPosts';
 import Error from './views/404';
+import Categories from "./views/Categories";
 
 class PostsApp extends React.Component {
   /*constructor(props) {
@@ -20,10 +21,11 @@ class PostsApp extends React.Component {
         <div className="app">
           <Switch>
             <Route component={ HomePage } exact path='/' />
-            <Route component={ Posts } exact path='/posts/:path' />
+            <Route component={ Categories } exact path='/categorie/:path' />
             <Route component={ AddPosts } exact path='/add-posts' />
+            <Route component={ AddPosts } exact path='/edit/:id' />
             <Route component={ Error } exact path='/error' />
-            {/*<Redirect from='*' to='/' />*/}
+            <Redirect from='*' to='/error' />
           </Switch>
         </div>
       </BrowserRouter>
