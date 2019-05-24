@@ -1,34 +1,34 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CardPost from '../components/CardPost/CardPost';
-// import { Link } from 'react-router-dom';
+import { handleGetPosts } from "../actions";
 
 class HomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {};
-
-    this.updateList = this.updateList.bind(this);
   };
 
-  componentDidMount() {
-    return this.updateList();
+  componentWillMount() {
+    this.props.getPosts();
   }
 
-  async updateList() {}
-
   render() {
-    const { newValue } = this.props;
+    const { posts } = this.props;
 
     return (
       <div className='Home'>
-        <h1 style={{ paddingBottom: '20px' }}>{ newValue }</h1>
-        <CardPost />
+        { posts.map((item, ind) => (
+          <CardPost dados={ item } key={ ind } />
+        )) }
       </div>
     );
   }
 }
 
-const mapStateToProps = store => ({ newValue: store.clickState.newValue });
+const mapStateToProps = store => ({ posts: store.posts.posts });
+const mapDispatchToProps = (dispatch) => ({
+  getPosts: () => dispatch(handleGetPosts())
+});
 
-export default connect(mapStateToProps)(HomePage);
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

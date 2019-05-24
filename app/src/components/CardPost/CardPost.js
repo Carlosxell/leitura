@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
+import CardFooter from './CardFooter/CardFooter';
 import './CardPost.css'
 
 class CardPost extends Component {
@@ -13,8 +15,12 @@ class CardPost extends Component {
           </figure>
 
           <div className='cardPost_content_info'>
-            <h1 className='cardPost_content_info_title'>Teste</h1>
-            <p className='cardPost_content_info_text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam esse, et illo magni pariatur repudiandae temporibus vel voluptate voluptatem. Aspernatur consequuntur debitis dolorum fugit ipsa necessitatibus perspiciatis quasi, quod?</p>
+            <Link className='cardPost_content_info_link' to={`/categorie/${this.props.dados.category}`}>
+              <h1 className='cardPost_content_info_title'>{ this.props.dados.title }</h1>
+              <p className='cardPost_content_info_text'>{ this.props.dados.body }</p>
+              <p className='cardPost_content_info_text'><strong><em>Author: </em></strong>{ this.props.dados.author }</p>
+            </Link>
+            <CardFooter info={ this.props.dados } />
           </div>
         </div>
       </div>

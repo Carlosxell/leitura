@@ -1,11 +1,11 @@
 .cardPost {
   box-shadow: 0 0 .325rem .125rem rgba(0, 0, 0, .3);
   border-radius: .25rem;
+  margin-bottom: 1.25rem;
   padding: .75rem;
 }
 
 .cardPost_content {
-  align-items: center;
   display: flex;
   justify-content: space-between;
 }
@@ -25,6 +25,28 @@
   width: calc(100% - 8rem);
 }
 
+.cardPost_content_info_link {
+  color: #000;
+  display: inline-block;
+  transition: color .15s ease-in-out;
+  text-decoration: none;
+}
+
+.cardPost_content_info_link:hover {
+  color: rgba(0, 0, 0, .5);
+}
+
+.cardPost_content_info_link:focus,
+.cardPost_content_info_link:visited {
+  color: #000;
+  text-decoration: none;
+}
+
+.cardPost_content_info_title,
+.cardPost_content_info_text {
+  text-transform: capitalize;
+}
+
 .cardPost_content_info_title {
   border-bottom: .063rem solid rgba(0, 0, 0, .4);
   display: inline-block;
@@ -37,4 +59,19 @@
 .cardPost_content_info_text {
   font-size: .75rem;
   font-weight: 400;
+}
+
+.cardPost_footer {
+  font-size: .75rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: .125rem;
+  width: 100%;
+}
+
+.cardPost_footer_categorie {
+  background-color: rgba(200, 200, 200, 1);
+  border-radius: .75rem;
+  font-weight: 500;
+  padding: 0 .5rem;
 }
