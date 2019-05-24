@@ -1,13 +1,15 @@
+import { GET_CATEGORIES } from "../actions/actionTypes";
+
 const initialState = {
-  newValue: ''
+  list: []
 };
 
 export const otherReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'OTHER_REDUCER':
+    case GET_CATEGORIES:
       return {
         ...state,
-        newValue: action.newValue
+        list: action.list
       };
     default:
       return state;
