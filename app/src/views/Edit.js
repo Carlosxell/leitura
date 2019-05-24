@@ -18,7 +18,7 @@ class Edit extends Component {
   render() {
     return (
       <div className="">
-        <h1>Posts</h1>
+        <h1>Edit</h1>
       </div>
     );
   }

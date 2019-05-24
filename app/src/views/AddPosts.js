@@ -5,15 +5,7 @@ class Posts extends Component {
   constructor(props) {
     super(props);
     this.state = {};
-
-    this.updateList = this.updateList.bind(this);
   };
-
-  componentDidMount() {
-    this.updateList();
-  }
-
-  updateList() {}
 
   render() {
     return (
