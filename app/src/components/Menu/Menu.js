@@ -20,7 +20,7 @@ class Menu extends Component {
         </li>
 
         <li className='menu_item'>
-          <Link className='menu_link' to={'/add-post'}>Add Post</Link>
+          <Link className='menu_link' to={'/add-posts'}>Add Post</Link>
         </li>
 
         { list.map((item, ind) => (

@@ -17,8 +17,9 @@ class Error extends Component {
 
   render() {
     return (
-      <div className="">
-        <h1>404 [ Error ]</h1>
+      <div className="error">
+        <h1 className='error_title'>404 [ Error ]</h1>
+        <p className='error_text'>Desculpe, essa página ou post não existe.</p>
       </div>
     );
   }

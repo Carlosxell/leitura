@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CardPost from '../components/CardPost/CardPost';
 import { handleGetPosts } from "../actions";
+import NoResults from "../components/NoResults";
 
 class HomePage extends Component {
   constructor(props) {
@@ -18,9 +19,11 @@ class HomePage extends Component {
 
     return (
       <div className='Home'>
-        { posts.map((item, ind) => (
-          <CardPost dados={ item } key={ ind } />
-        )) }
+        { !posts.length ? (<NoResults />) : (
+          posts.map((item, ind) => (
+            <CardPost dados={ item } key={ ind } />
+          ))
+        ) }
       </div>
     );
   }

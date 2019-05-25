@@ -7,6 +7,7 @@ import Edit from './views/Edit';
 import AddPosts from './views/AddPosts';
 import Error from './views/404';
 import Categories from "./views/Categories";
+import Post from "./views/Post";
 
 class PostsApp extends React.Component {
   /*constructor(props) {
@@ -23,6 +24,7 @@ class PostsApp extends React.Component {
             <Route component={ HomePage } exact path='/' />
             <Route component={ Categories } exact path='/categorie/:path' />
             <Route component={ AddPosts } exact path='/add-posts' />
+            <Route component={ Post } exact path='/post/:id' />
             <Route component={ Edit } exact path='/edit/:id' />
             <Route component={ Error } exact path='/error' />
             <Redirect from='*' to='/error' />

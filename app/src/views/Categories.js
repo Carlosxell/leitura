@@ -1,32 +1,49 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from "react-router-dom";
-import { clickButton } from '../actions';
+import { handleGetPostsByCategory } from "../actions";
+import CardPost from "../components/CardPost/CardPost";
+import NoResults from "../components/NoResults";
 
 class Categories extends Component {
   componentWillMount() {
+    this.props.getPosts(this.props.match.params.path);
+
     this.props.history.listen((location, action) => {
       console.info(location, 'location');
       console.info(action, 'action');
-
-      this.props.clickButton(Math.random().toString(36).substr(-8));
     });
   }
 
+  componentDidMount() {
+    this.props.getPosts(this.props.match.params.path);
+  }
+
+  componentWillReceiveProps(nextProps, nextContext) {
+    let oldPath = this.props.match.params.path;
+    let newPath = nextProps.match.params.path;
+
+    if(oldPath !== newPath) return this.props.getPosts(newPath);
+  }
+
   render() {
-    const { newValue } = this.props;
+    const { postsByCategory } = this.props;
 
     return (
       <div className='categories'>
-        <h1>{ newValue }</h1>
+        { !postsByCategory.length ? (<NoResults />) : (
+          postsByCategory.map((item, ind) => (
+            <CardPost dados={ item } key={ ind } />
+          ))
+        ) }
       </div>
     );
   }
 }
 
-const mapStateToProps = store => ({ newValue: store.clickState.newValue });
+const mapStateToProps = store => ({ postsByCategory: store.posts.postsByCategory });
 const mapDispatchToProps = (dispatch) => ({
-  clickButton: (value) => dispatch(clickButton(value))
+  getPosts: (value) => dispatch(handleGetPostsByCategory(value))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Categories))

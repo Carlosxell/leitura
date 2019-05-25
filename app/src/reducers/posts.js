@@ -1,7 +1,8 @@
-import { GET_POSTS } from '../actions/actionTypes';
+import { GET_POSTS, GET_POSTS_BY_CATEGORY } from '../actions/actionTypes';
 
 const initialState = {
-  posts: []
+  posts: [],
+  postsByCategory: []
 };
 
 export const posts = (state = initialState, action) => {
@@ -11,6 +12,13 @@ export const posts = (state = initialState, action) => {
         ...state,
         posts: action.posts
       };
+
+    case GET_POSTS_BY_CATEGORY:
+      return {
+        ...state,
+        postsByCategory: action.postsByCategory
+      };
+
     default:
       return state;
   }

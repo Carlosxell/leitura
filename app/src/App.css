@@ -17,3 +17,24 @@ body, .app {
   margin: 5rem auto 0;
   padding: 1.25rem;
 }
+
+.error {
+  text-align: center;
+}
+
+.error_title {
+  color: #ff0000;
+  font-size: 1.125rem;
+}
+
+.error_text {
+  font-weight: 400;
+  margin-top: 1.125rem;
+}
+
+.noResults {
+  color: #ff0000;
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-align: center;
+}

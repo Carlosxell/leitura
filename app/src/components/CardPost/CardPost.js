@@ -15,7 +15,7 @@ class CardPost extends Component {
           </figure>
 
           <div className='cardPost_content_info'>
-            <Link className='cardPost_content_info_link' to={`/categorie/${this.props.dados.category}`}>
+            <Link className='cardPost_content_info_link' to={`/post/${this.props.dados.id}`}>
               <h1 className='cardPost_content_info_title'>{ this.props.dados.title }</h1>
               <p className='cardPost_content_info_text'>{ this.props.dados.body }</p>
               <p className='cardPost_content_info_text'><strong><em>Author: </em></strong>{ this.props.dados.author }</p>
