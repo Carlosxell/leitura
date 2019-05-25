@@ -29,6 +29,21 @@
   width: 100%;
 }
 
+.postPage_subHeader {
+  align-items: center;
+  display: flex;
+}
+
+.postPage_subHeader_tag {
+  background-color: rgba(200, 200, 200, 1);
+  border-radius: .75rem;
+  display: inline-block;
+  font-size: .75rem;
+  font-weight: 500;
+  margin-bottom: .75rem;
+  padding: 0 .5rem;
+}
+
 .postPage_text {
   background-color: rgba(200, 200, 200, .2);
   border-radius: .25rem;

@@ -1,5 +1,5 @@
 import * as api from '../services/api';
-import { GET_CATEGORIES, GET_POSTS, GET_POSTS_BY_CATEGORY } from "./actionTypes";
+import { GET_CATEGORIES, GET_POSTS, GET_POSTS_BY_CATEGORY, GET_POSTS_BY_ID } from "./actionTypes";
 
 // export const clickButton = (value) => ({ type: CLICK_UPDATE_VALUE, newValue: value });
 
@@ -13,6 +13,12 @@ export const handleGetCategory = () => (dispatch) => {
 export const handleGetPosts = () => (dispatch) => {
   api.getPosts().then((result) => {
     dispatch({ type: GET_POSTS, posts: result })
+  }).catch(error => dispatch({ type: 'ERROR_API', error }))
+};
+
+export const handleGetPostsById = (data) => (dispatch) => {
+  api.getPost(data).then((result) => {
+    dispatch({ type: GET_POSTS_BY_ID, post: result })
   }).catch(error => dispatch({ type: 'ERROR_API', error }))
 };
 

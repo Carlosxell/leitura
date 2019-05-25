@@ -1,3 +1,4 @@
 export const GET_CATEGORIES = 'GET_CATEGORIES';
 export const GET_POSTS = 'GET_POSTS';
+export const GET_POSTS_BY_ID = 'GET_POSTS_BY_ID';
 export const GET_POSTS_BY_CATEGORY = 'GET_POSTS_BY_CATEGORY';
