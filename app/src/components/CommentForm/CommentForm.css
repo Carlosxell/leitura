@@ -1,0 +1,32 @@
+.commentForm {}
+
+.commentForm_wrap {}
+
+.commentForm_grid {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.commentForm_grid_wrap {
+  width: calc(100% - 2.75rem);
+}
+
+.commentForm_label {
+  display: inline-block;
+  font-size: .875rem;
+  font-weight: 500;
+  padding-bottom: .75rem;
+}
+
+.commentForm_input {}
+
+.commentForm_textArea {
+  margin-bottom: .25rem;
+}
+
+.commentForm_footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: .75rem;
+}

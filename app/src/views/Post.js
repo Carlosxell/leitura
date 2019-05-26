@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { handleGetPostsById, handleGetComments } from "../actions";
 import CommentList from '../components/CommentList/CommentList';
+import CommentForm from '../components/CommentForm/CommentForm';
 import '../assets/css/Post.css';
 
 class Post extends Component {
@@ -12,6 +13,12 @@ class Post extends Component {
   }
 
   async componentWillReceiveProps(nextProps, nextContext) {
+    const { id } = this.props.match.params;
+
+    if(this.props.comments.length !== nextProps.comments.length) {
+      await this.props.getComments(id);
+    }
+
     if((nextProps.post === null) || nextProps.post.error) return this.props.history.push('/error')
   }
 
@@ -25,13 +32,14 @@ class Post extends Component {
 
             <div className='postPage_subHeader'>
               <h3 className='postPage_subTitle'><strong>Author: </strong>{ this.props.post.author }</h3>
-
               <span className='postPage_subHeader_tag'>#{ this.props.post.category }</span>
             </div>
 
             <p className='postPage_text'>{ this.props.post.body }</p>
 
             <div className='postPage_footer'>
+              <CommentForm />
+
               { comments && comments.length ? (<CommentList lista={ comments } />) : ('') }
             </div>
           </div>

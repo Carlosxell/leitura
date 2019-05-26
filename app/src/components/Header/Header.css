@@ -13,5 +13,12 @@
   height: 3.75rem;
   margin: 0 auto;
   max-width: 48rem;
-  padding: 0 1.25rem;
+  padding: 0 .875rem;
+  transition: padding .15s ease-in-out;
+}
+
+@media(min-width: 30rem) {
+  .header_container {
+    padding: 0 1.25rem;
+  }
 }

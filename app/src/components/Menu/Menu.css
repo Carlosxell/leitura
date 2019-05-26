@@ -14,12 +14,18 @@
 .menu_link {
   color: #fff;
   display: inline-block;
-  font-size: 1.125rem;
+  font-size: .875rem;
   font-weight: 500;
   text-decoration: none;
   padding: 1rem 0;
-  transition: opacity .15s linear;
+  transition: opacity .15s ease-in-out, font-size .15s ease-in-out;
   text-transform: capitalize;
+}
+
+@media(min-width: 30rem) {
+  .menu_link {
+    font-size: 1.125rem;
+  }
 }
 
 .menu_link:active,

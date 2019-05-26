@@ -45,10 +45,31 @@
 }
 
 .postPage_text {
+  align-items: center;
   background-color: rgba(200, 200, 200, .2);
   border-radius: .25rem;
+  display: flex;
   font-size: .875rem;
   font-weight: 400;
   margin-bottom: .875rem;
+  min-height: 2.5rem;
   padding: .5rem .75rem;
+}
+
+.postPage_footer {
+  padding-top: 1.75rem;
+  position: relative;
+}
+
+.postPage_footer:before {
+  background-color: rgba(0, 0, 0, 8);
+  content: '';
+  display: inline-block;
+  height: .125rem;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 4rem;
 }
