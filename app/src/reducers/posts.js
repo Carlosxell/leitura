@@ -1,4 +1,4 @@
-import { GET_POSTS, GET_POSTS_BY_CATEGORY, GET_POSTS_BY_ID } from '../actions/actionTypes';
+import { GET_POSTS, GET_POSTS_BY_CATEGORY, GET_POSTS_BY_ID } from '../actions/types';
 
 const initialState = {
   posts: [],

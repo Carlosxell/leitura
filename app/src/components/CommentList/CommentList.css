@@ -1,0 +1,26 @@
+.commentList {
+  list-style: none;
+}
+
+.commentList_item {
+  border: .125rem solid transparent;
+  font-size: .75rem;
+  font-weight: 400;
+  margin-bottom: .75rem;
+  padding: 0 .5rem;
+}
+
+.commentList_item:nth-child(odd) {
+  border-left-color: rgba(0, 0, 0, .8);
+}
+
+.commentList_item:nth-child(even) {
+  border-right-color: rgba(0, 0, 0, .8);
+  text-align: right;
+}
+
+.commentList_item {}
+
+.commentList_text {}
+
+.commentList_wrap_author {}

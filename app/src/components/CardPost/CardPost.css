@@ -2,7 +2,7 @@
   box-shadow: 0 0 .325rem .125rem rgba(0, 0, 0, .3);
   border-radius: .25rem;
   margin-bottom: 1.25rem;
-  padding: .75rem;
+  padding: .5rem;
 }
 
 .cardPost_content {
@@ -12,8 +12,9 @@
 
 .cardPost_content_wrap {
   display: inline-block;
-  height: 6.25rem;
-  width: 6.25rem;
+  height: 3.25rem;
+  transition: width .15s ease-in-out, height .15s ease-in-out;
+  width: 3.25rem;
 }
 
 .cardPost_content_wrap_img {
@@ -22,7 +23,24 @@
 }
 
 .cardPost_content_info {
-  width: calc(100% - 8rem);
+  transition: width .15s ease-in-out;
+  width: calc(100% - 4rem);
+}
+
+@media(min-width: 30rem) {
+  .cardPost {
+    padding: .75rem;
+  }
+
+  .cardPost_content_wrap {
+    display: inline-block;
+    height: 6.25rem;
+    width: 6.25rem;
+  }
+
+  .cardPost_content_info {
+    width: calc(100% - 8rem);
+  }
 }
 
 .cardPost_content_info_link {

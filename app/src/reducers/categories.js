@@ -1,4 +1,4 @@
-import { GET_CATEGORIES } from "../actions/actionTypes";
+import { GET_CATEGORIES } from "../actions/types";
 
 const initialState = {
   list: []

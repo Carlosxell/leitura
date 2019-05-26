@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { handleGetPostsById, handleGetComments } from "../actions";
+import CommentList from '../components/CommentList/CommentList';
 import '../assets/css/Post.css';
-import { handleGetPostsById } from "../actions";
 
 class Post extends Component {
   async componentWillMount() {
     const { id } = this.props.match.params;
     await this.props.getPost(id);
+    await this.props.getComments(id);
   }
 
   async componentWillReceiveProps(nextProps, nextContext) {
-    const { id } = this.props.match.params;
-    // await this.props.getPost(id);
-
-    if(nextProps.post === null) return this.props.history.push('/error');
+    if((nextProps.post === null) || nextProps.post.error) return this.props.history.push('/error')
   }
 
   render() {
+    const { comments } = this.props;
     return (
       <div className='postPage'>
         { this.props.post ? (
@@ -31,7 +31,9 @@ class Post extends Component {
 
             <p className='postPage_text'>{ this.props.post.body }</p>
 
-            <div className='postPage_footer'></div>
+            <div className='postPage_footer'>
+              { comments && comments.length ? (<CommentList lista={ comments } />) : ('') }
+            </div>
           </div>
         ) : ('') }
       </div>
@@ -39,9 +41,10 @@ class Post extends Component {
   }
 }
 
-const mapStateToProps = store => ({ post: store.posts.post });
+const mapStateToProps = store => ({ post: store.posts.post, comments: store.comments.comments });
 const mapDispatchToProps = (dispatch) => ({
-  getPost: (value) => dispatch(handleGetPostsById(value))
+  getPost: (val) => dispatch(handleGetPostsById(val)),
+  getComments: (val) => dispatch(handleGetComments(val))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Post);
