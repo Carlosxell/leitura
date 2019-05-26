@@ -3,3 +3,4 @@ export const GET_POSTS = 'GET_POSTS';
 export const GET_POSTS_BY_ID = 'GET_POSTS_BY_ID';
 export const GET_POSTS_BY_CATEGORY = 'GET_POSTS_BY_CATEGORY';
 export const GET_COMMENTS = 'GET_COMMENTS';
+export const SET_COMMENTS = 'SET_COMMENTS';

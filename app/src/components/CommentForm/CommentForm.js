@@ -1,32 +1,1 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import '../../assets/css/Forms.css'
-import './CommentForm.css'
-
-class CommentForm extends Component {
-  render() {
-    return (
-      <form className='commentForm'>
-        <div className='commentForm_grid'>
-          <label className='commentForm_label' htmlFor="nome">
-            <strong>Nome</strong>
-          </label>
-          <div className='commentForm_grid_wrap'>
-            <input className='commentForm_input form'
-                   id='nome'
-                   placeholder='Ex: José abrantes'
-                   type="text" />
-          </div>
-        </div>
-
-        <textarea className='commentForm_textArea form'
-                  placeholder='Digite aqui seu comentário'></textarea>
-
-        <div className='commentForm_footer'>
-          <button className='commentForm_btn' type='submit'>Comment</button>
-        </div>
-      </form>
-    );
-  }
-}
-export default connect()(CommentForm);
+import React, { Component } from 'react';import { connect } from 'react-redux';import '../../assets/css/Forms.css'import './CommentForm.css'import { handleSetComment } from "../../actions";class CommentForm extends Component {  constructor(props) {    super(props);    this.state = {      author: '',      body: '',      parentId: this.props.idParent    };    this.checkForDisable = this.checkForDisable.bind(this);    this.handleChangeText = this.handleChangeText.bind(this);    this.handleChangeComment = this.handleChangeComment.bind(this);    this.handleSetNewComment = this.handleSetNewComment.bind(this);  }  handleChangeText(e) {    let val = e.target.value;    this.setState({ author: val })  }  handleChangeComment(e) {    let val = e.target.value;    this.setState({ body: val })  }  async handleSetNewComment(e) {    e.preventDefault();    let id = Math.random().toString(36).substr(-16);    let timestamp = (new Date()).toISOString()    console.info({ timestamp, id, ...this.state }, 'estado');    await this.props.setComment({ timestamp, id, ...this.state });  }  checkForDisable(text, comment) {    return ((text.length < 2) && (comment.length < 5)) || ((text.length >= 2) && (comment.length < 5)) ||           ((text.length < 2) && (comment.length >= 5)) || ((text.length >= 2) && (comment.length < 5));  }  render() {    return (      <form autoComplete='off' className='commentForm' noValidate>        <div className='commentForm_grid'>          <label className='commentForm_label' htmlFor="nome">            <strong>Nome</strong>          </label>          <div className='commentForm_grid_wrap'>            <input onChange={ this.handleChangeText }                   className='commentForm_input form'                   id='nome'                   placeholder='Ex: José abrantes'                   type='text'                   value={ this.state.author } />          </div>        </div>        <textarea onChange={ this.handleChangeComment }                  className='commentForm_textArea form'                  placeholder='Digite aqui seu comentário'                  value={ this.state.body }></textarea>        <div className='commentForm_footer'>          <button onClick={ this.handleSetNewComment } className='commentForm_btn'                  disabled={ this.checkForDisable(this.state.author, this.state.body) }                  type='submit'>Comment</button>        </div>      </form>    );  }}const mapStateToProps = store => ({});const mapDispatchToProps = (dispatch) => ({  setComment: (val) => dispatch(handleSetComment(val))});export default connect(mapStateToProps, mapDispatchToProps)(CommentForm);

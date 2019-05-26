@@ -38,7 +38,7 @@ class Post extends Component {
             <p className='postPage_text'>{ this.props.post.body }</p>
 
             <div className='postPage_footer'>
-              <CommentForm />
+              <CommentForm idParent={ this.props.post.id } />
 
               { comments && comments.length ? (<CommentList lista={ comments } />) : ('') }
             </div>

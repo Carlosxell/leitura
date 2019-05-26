@@ -4,7 +4,8 @@ import {
   GET_POSTS,
   GET_POSTS_BY_CATEGORY,
   GET_POSTS_BY_ID,
-  GET_COMMENTS } from "./types";
+  GET_COMMENTS,
+  SET_COMMENTS } from "./types";
 
 // export const clickButton = (value) => ({ type: CLICK_UPDATE_VALUE, newValue: value });
 
@@ -36,5 +37,15 @@ export const handleGetPostsByCategory = (data) => (dispatch) => {
 export const handleGetComments = (data) => (dispatch) => {
   api.getComments(data).then((result) => {
     dispatch({ type: GET_COMMENTS, comments: result })
+  }).catch(error => dispatch({ type: 'ERROR_API', error }))
+};
+
+export const handleSetComment = (data) => (dispatch) => {
+  const id = data.parentId ;
+
+  api.createComment(data).then(async (result) => {
+    console.info(result, 'resultado de tentativa ao criar comentário');
+    await handleGetComments(id);
+    dispatch({ type: SET_COMMENTS, comments: result });
   }).catch(error => dispatch({ type: 'ERROR_API', error }))
 };
