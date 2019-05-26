@@ -80,11 +80,13 @@ export const getComment = (data) => fetch(
 export const createComment = (data) => fetch(
   `${url}/comments`,
   {
-    method: 'post',
-    headers: headers,
+    method: 'POST',
+    headers: {
+      ...headers,
+      'Content-Type': 'application/json'
+    },
     body: JSON.stringify(data)
-  }
-).then(res => res.json()).then(data => data)
+  }).then(res => res.json()).then(data => data)
 
 export const editComment = (data) => fetch(
   `${url}/comments/${data.id}`,
