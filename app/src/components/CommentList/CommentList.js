@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import './CommentList.css'
+import { handleDeleteComment } from "../../actions";
 
 class CommentList extends Component {
   render() {
@@ -18,7 +19,7 @@ class CommentList extends Component {
               <div className='commentList_grid_box'>
                 <Link className='commentList_btn' to={`/edit-comment/${ item.id }`}>Edit</Link>
                 <br />
-                <button className='commentList_btn--danger' type='button'>Delete</button>
+                <button onClick={ () => this.props.deleteComment(item) } className='commentList_btn--danger' type='button'>Delete</button>
               </div>
             </div>
           </li>
@@ -28,4 +29,9 @@ class CommentList extends Component {
   }
 }
 
-export default connect()(CommentList);
+const mapStateToProps = store => ({});
+const mapDispatchToProps = (dispatch) => ({
+  deleteComment: (val) => dispatch(handleDeleteComment(val))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(CommentList);

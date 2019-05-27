@@ -1,4 +1,4 @@
-import { GET_COMMENTS, SET_COMMENTS } from "../actions/types";
+import { GET_COMMENTS, SET_COMMENT } from "../actions/types";
 
 const initialState = {
   comments: []
@@ -12,7 +12,7 @@ export const comments = (state = initialState, action) => {
         comments: action.comments
       };
 
-    case SET_COMMENTS:
+    case SET_COMMENT:
       return {
         ...state
       };
