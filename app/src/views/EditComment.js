@@ -7,10 +7,7 @@ import { handleGetCommentById } from "../actions";
 class EditComment extends Component {
   async componentWillMount() {
     const { id } = this.props.match.params;
-
     await this.props.getComment(id);
-
-    console.info(this.props.match.params.id, 'parametros');
   }
 
   render() {

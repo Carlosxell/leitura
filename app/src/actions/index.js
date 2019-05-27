@@ -6,6 +6,7 @@ import {
   GET_POSTS_BY_ID,
   GET_COMMENTS,
   GET_COMMENT,
+  EDIT_COMMENT,
   DELETE_COMMENT,
   SET_COMMENT } from "./types";
 
@@ -69,5 +70,11 @@ export const handleDeleteComment = (data) => (dispatch) => {
 export const handleGetCommentById = (data) => (dispatch) => {
   api.getComment(data).then((res) => {
     dispatch({ type: GET_COMMENT, commentForEdit: res });
+  }).catch(error => dispatch({ type: 'ERROR_API', error }))
+};
+
+export const handleEditComment = (data) => (dispatch) => {
+  api.editComment(data).then((res) => {
+    dispatch({ type: EDIT_COMMENT });
   }).catch(error => dispatch({ type: 'ERROR_API', error }))
 };

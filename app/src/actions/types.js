@@ -4,5 +4,6 @@ export const GET_POSTS_BY_ID = 'GET_POSTS_BY_ID';
 export const GET_POSTS_BY_CATEGORY = 'GET_POSTS_BY_CATEGORY';
 export const GET_COMMENTS = 'GET_COMMENTS';
 export const GET_COMMENT = 'GET_COMMENT';
+export const EDIT_COMMENT = 'EDIT_COMMENT';
 export const DELETE_COMMENT = 'DELETE_COMMENT';
 export const SET_COMMENT = 'SET_COMMENT';
