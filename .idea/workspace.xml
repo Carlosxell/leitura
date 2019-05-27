@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6952665d-f815-4d9f-883b-d35510b94911" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/actions/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/actions/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/actions/types.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/components/CommentForm/CommentForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/CommentForm/CommentForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/CommentList/CommentList.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/CommentList/CommentList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/reducers/comments.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/reducers/comments.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/services/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/services/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/views/EditComment.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/views/EditComment.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/api-server/node_modules/" />
     <ignored path="$PROJECT_DIR$/app/node_modules/" />
@@ -23,50 +22,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/actions/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="63" column="7" lean-forward="true" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-                <element signature="e#318#505#0" />
-                <element signature="e#389#447#0" />
-                <element signature="e#558#706#0" />
-                <element signature="e#594#648#0" />
-                <element signature="e#767#923#0" />
-                <element signature="e#806#865#0" />
-                <element signature="e#990#1174#0" />
-                <element signature="e#1040#1116#0" />
-                <element signature="e#1234#1395#0" />
-                <element signature="e#1277#1337#0" />
-                <element signature="e#1585#1649#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/services/api.js">
+        <entry file="file://$PROJECT_DIR$/app/src/views/EditComment.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="99" column="26" selection-start-line="99" selection-start-column="13" selection-end-line="99" selection-end-column="26" />
+            <state relative-caret-position="5">
+              <caret line="19" column="29" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
               <folding>
-                <element signature="e#250#310#0" />
-                <element signature="e#380#407#0" />
-                <element signature="e#522#549#0" />
-                <element signature="e#675#702#0" />
-                <element signature="e#817#844#0" />
-                <element signature="e#954#1032#0" />
-                <element signature="e#1151#1228#0" />
-                <element signature="e#1346#1394#0" />
-                <element signature="e#1522#1548#0" />
-                <element signature="e#1669#1695#0" />
-                <element signature="e#1811#1948#0" />
-                <element signature="e#1846#1912#0" />
-                <element signature="e#2072#2149#0" />
-                <element signature="e#2273#2321#0" />
-                <element signature="e#2453#2533#0" />
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -75,8 +37,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/components/CommentForm/CommentForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="730">
+              <caret line="87" column="3" lean-forward="true" selection-start-line="87" selection-start-column="3" selection-end-line="87" selection-end-column="3" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
                 <element signature="n#!!block;n#handleChangeText#0;n#CommentForm#0" />
@@ -87,14 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/components/CommentList/CommentList.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/reducers/comments.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="21" column="70" selection-start-line="21" selection-start-column="70" selection-end-line="21" selection-end-column="70" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="116">
+              <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -115,6 +74,7 @@
       <find>getComments</find>
       <find>&quot;</find>
       <find>SET_COMMENTS</find>
+      <find>commentForEdit</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -133,18 +93,18 @@
       <list>
         <option value="$PROJECT_DIR$/app/src/components/CommentForm/CommentForm.css" />
         <option value="$PROJECT_DIR$/app/src/views/Post.js" />
-        <option value="$PROJECT_DIR$/app/src/reducers/comments.js" />
-        <option value="$PROJECT_DIR$/app/src/services/api.js" />
         <option value="$PROJECT_DIR$/app/src/components/EditComment/EditComment.js" />
         <option value="$PROJECT_DIR$/app/src/components/EditComment/EditComment.css" />
-        <option value="$PROJECT_DIR$/app/src/views/EditComment.js" />
         <option value="$PROJECT_DIR$/app/src/components/Header/Header.css" />
         <option value="$PROJECT_DIR$/app/src/components/CommentList/CommentList.css" />
         <option value="$PROJECT_DIR$/app/src/App.js" />
+        <option value="$PROJECT_DIR$/app/src/components/CommentList/CommentList.js" />
+        <option value="$PROJECT_DIR$/app/src/services/api.js" />
         <option value="$PROJECT_DIR$/app/src/actions/types.js" />
         <option value="$PROJECT_DIR$/app/src/components/CommentForm/CommentForm.js" />
-        <option value="$PROJECT_DIR$/app/src/components/CommentList/CommentList.js" />
         <option value="$PROJECT_DIR$/app/src/actions/index.js" />
+        <option value="$PROJECT_DIR$/app/src/views/EditComment.js" />
+        <option value="$PROJECT_DIR$/app/src/reducers/comments.js" />
       </list>
     </option>
   </component>
@@ -181,7 +141,7 @@
               <item name="leitura" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="actions" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="leitura" type="b2602c69:ProjectViewProjectNode" />
@@ -189,15 +149,20 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="CommentForm" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="leitura" type="b2602c69:ProjectViewProjectNode" />
               <item name="leitura" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="CommentList" type="462c0819:PsiDirectoryNode" />
+              <item name="reducers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="leitura" type="b2602c69:ProjectViewProjectNode" />
+              <item name="leitura" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -255,13 +220,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15899000" />
+    <option name="totallyTimeSpent" value="19535000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-11" width="1602" height="912" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24984147" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24984147" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -273,7 +238,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32947233" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32947233" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="GraphQL" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -299,16 +264,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/views/Post.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="40" column="56" selection-start-line="40" selection-start-column="56" selection-end-line="40" selection-end-column="56" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api-server/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SECOND">
@@ -317,25 +272,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/reducers/comments.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="17" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/assets/css/EditComment.css">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/views/EditComment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/components/Header/Header.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -357,6 +295,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/CommentList/CommentList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
@@ -367,30 +315,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/actions/types.js">
+    <entry file="file://$PROJECT_DIR$/app/src/components/CardPost/CardPost.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="5" column="45" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/CommentForm/CommentForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        <state>
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <element signature="n#!!block;n#handleChangeText#0;n#CommentForm#0" />
-            <element signature="n#!!block;n#handleChangeComment#0;n#CommentForm#0" />
-            <element signature="n#!!block;n#checkForDisable#0;n#CommentForm#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/CommentList/CommentList.js">
+    <entry file="file://$PROJECT_DIR$/app/src/actions/types.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="21" column="70" selection-start-line="21" selection-start-column="70" selection-end-line="21" selection-end-column="70" />
+        <state relative-caret-position="145">
+          <caret line="5" column="13" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/reducers/categories.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-198" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/reducers/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/views/Post.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="40" column="56" selection-start-line="40" selection-start-column="56" selection-end-line="40" selection-end-column="56" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -399,8 +357,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/services/api.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="99" column="26" selection-start-line="99" selection-start-column="13" selection-end-line="99" selection-end-column="26" />
+        <state relative-caret-position="208">
+          <caret line="74" column="2" selection-start-line="74" selection-start-column="2" selection-end-line="74" selection-end-column="2" />
           <folding>
             <element signature="e#250#310#0" />
             <element signature="e#380#407#0" />
@@ -412,33 +370,59 @@
             <element signature="e#1346#1394#0" />
             <element signature="e#1522#1548#0" />
             <element signature="e#1669#1695#0" />
-            <element signature="e#1811#1948#0" />
-            <element signature="e#1846#1912#0" />
-            <element signature="e#2072#2149#0" />
             <element signature="e#2273#2321#0" />
             <element signature="e#2453#2533#0" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/CommentForm/CommentForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="730">
+          <caret line="87" column="3" lean-forward="true" selection-start-line="87" selection-start-column="3" selection-end-line="87" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="n#!!block;n#handleChangeText#0;n#CommentForm#0" />
+            <element signature="n#!!block;n#handleChangeComment#0;n#CommentForm#0" />
+            <element signature="n#!!block;n#checkForDisable#0;n#CommentForm#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/views/EditComment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5">
+          <caret line="19" column="29" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/actions/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="63" column="7" lean-forward="true" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
+        <state relative-caret-position="643">
+          <caret line="70" column="48" selection-start-line="70" selection-start-column="48" selection-end-line="70" selection-end-column="48" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#318#505#0" />
-            <element signature="e#389#447#0" />
-            <element signature="e#558#706#0" />
-            <element signature="e#594#648#0" />
-            <element signature="e#767#923#0" />
-            <element signature="e#806#865#0" />
-            <element signature="e#990#1174#0" />
-            <element signature="e#1040#1116#0" />
-            <element signature="e#1234#1395#0" />
-            <element signature="e#1277#1337#0" />
-            <element signature="e#1585#1649#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/views/Categories.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="43" column="51" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/reducers/comments.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
         </state>
       </provider>
     </entry>

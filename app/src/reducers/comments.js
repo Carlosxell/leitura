@@ -1,7 +1,8 @@
-import { GET_COMMENTS, SET_COMMENT } from "../actions/types";
+import { GET_COMMENT, GET_COMMENTS, SET_COMMENT } from "../actions/types";
 
 const initialState = {
-  comments: []
+  comments: [],
+  commentForEdit: null
 };
 
 export const comments = (state = initialState, action) => {
@@ -10,6 +11,12 @@ export const comments = (state = initialState, action) => {
       return {
         ...state,
         comments: action.comments
+      };
+
+    case GET_COMMENT:
+      return {
+        ...state,
+        commentForEdit: action.commentForEdit
       };
 
     case SET_COMMENT:
