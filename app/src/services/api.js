@@ -92,7 +92,10 @@ export const editComment = (data) => fetch(
   `${url}/comments/${data.id}`,
   {
     method: 'put',
-    headers: headers,
+    headers: {
+      ...headers,
+      'Content-Type': 'application/json'
+    },
     body: JSON.stringify(data)
   }
 ).then(res => res.json()).then(data => data)

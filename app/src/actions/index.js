@@ -2,10 +2,14 @@ import * as api from '../services/api';
 import {
   GET_CATEGORIES,
   GET_POSTS,
+  VOTE,
   GET_POSTS_BY_CATEGORY,
   GET_POSTS_BY_ID,
   GET_COMMENTS,
-  SET_COMMENTS } from "./types";
+  GET_COMMENT,
+  EDIT_COMMENT,
+  DELETE_COMMENT,
+  SET_COMMENT } from "./types";
 
 // export const clickButton = (value) => ({ type: CLICK_UPDATE_VALUE, newValue: value });
 
@@ -44,10 +48,43 @@ export const handleSetComment = (data) => (dispatch) => {
   const id = data.parentId;
 
   api.createComment(data).then(async (result) => {
-    await api.getComments(data).then((result) => {
+    await api.getComments(id).then((result) => {
       dispatch({ type: GET_COMMENTS, comments: result })
     });
 
-    dispatch({ type: SET_COMMENTS });
+    dispatch({ type: SET_COMMENT });
   }).catch(error => dispatch({ type: 'ERROR_API', error }))
+};
+
+export const handleDeleteComment = (data) => (dispatch) => {
+  const id = data.parentId;
+
+  api.deleteComment(data.id).then(async (result) => {
+    await api.getComments(id).then((result) => {
+      dispatch({ type: GET_COMMENTS, comments: result })
+    });
+
+    dispatch({ type: DELETE_COMMENT });
+  }).catch(error => dispatch({ type: 'ERROR_API', error }))
+};
+
+export const handleGetCommentById = (data) => (dispatch) => {
+  api.getComment(data).then((res) => {
+    dispatch({ type: GET_COMMENT, commentForEdit: res });
+  }).catch(error => dispatch({ type: 'ERROR_API', error }))
+};
+
+export const handleEditComment = (data) => (dispatch) => {
+  api.editComment(data).then((res) => {
+    dispatch({ type: EDIT_COMMENT });
+  }).catch(error => dispatch({ type: 'ERROR_API', error }))
+};
+
+export const handleVote = (data) => (dispatch) => {
+  console.info(data, 'resposta de votos')
+
+  /*api.votePost(data).then((res) => {
+    console.info(res, 'resposta de votos')
+    // dispatch({ type: VOTE });
+  }).catch(error => dispatch({ type: 'ERROR_API', error }))*/
 };

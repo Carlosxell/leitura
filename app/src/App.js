@@ -26,6 +26,7 @@ class PostsApp extends React.Component {
             <Route component={ Categories } exact path='/categorie/:path' />
             <Route component={ AddPosts } exact path='/add-posts' />
             <Route component={ Post } exact path='/post/:id' />
+            <Route component={ Edit } exact path='/edit-post/:id' />
             <Route component={ EditComment } exact path='/edit-comment/:id' />
             <Route component={ Error } exact path='/error' />
             <Redirect from='*' to='/error' />

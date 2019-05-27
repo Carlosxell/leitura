@@ -1,0 +1,31 @@
+.boxVote {
+  align-items: center;
+  border: .063rem solid rgba(200, 200, 200, .4);
+  border-radius: .125rem;
+  display: inline-flex;
+  justify-content: space-between;
+  max-height: 1.125rem;
+  min-width: 6.25rem;
+}
+
+.boxVote_btn {
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  font-size: .875rem;
+  height: 1.125rem;
+  line-height: 0;
+  width: 1.125rem;
+}
+
+.boxVote_plus {}
+
+.boxVote_info {
+  font-size: .65rem;
+}
+
+.boxVote_minus {}
+
+.boxVote_info_number {
+  font-size: .68rem;
+}
