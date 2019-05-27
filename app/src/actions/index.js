@@ -2,6 +2,7 @@ import * as api from '../services/api';
 import {
   GET_CATEGORIES,
   GET_POSTS,
+  VOTE,
   GET_POSTS_BY_CATEGORY,
   GET_POSTS_BY_ID,
   GET_COMMENTS,
@@ -77,4 +78,13 @@ export const handleEditComment = (data) => (dispatch) => {
   api.editComment(data).then((res) => {
     dispatch({ type: EDIT_COMMENT });
   }).catch(error => dispatch({ type: 'ERROR_API', error }))
+};
+
+export const handleVote = (data) => (dispatch) => {
+  console.info(data, 'resposta de votos')
+
+  /*api.votePost(data).then((res) => {
+    console.info(res, 'resposta de votos')
+    // dispatch({ type: VOTE });
+  }).catch(error => dispatch({ type: 'ERROR_API', error }))*/
 };

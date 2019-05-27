@@ -27,22 +27,6 @@
   width: calc(100% - 4rem);
 }
 
-@media(min-width: 30rem) {
-  .cardPost {
-    padding: .75rem;
-  }
-
-  .cardPost_content_wrap {
-    display: inline-block;
-    height: 6.25rem;
-    width: 6.25rem;
-  }
-
-  .cardPost_content_info {
-    width: calc(100% - 8rem);
-  }
-}
-
 .cardPost_content_info_link {
   color: #000;
   display: inline-block;
@@ -68,7 +52,7 @@
 .cardPost_content_info_title {
   border-bottom: .063rem solid rgba(0, 0, 0, .4);
   display: inline-block;
-  font-size: 1rem;
+  font-size: .875rem;
   font-weight: 500;
   margin-bottom: .5rem;
   padding-bottom: .125rem;
@@ -92,4 +76,24 @@
   border-radius: .75rem;
   font-weight: 500;
   padding: 0 .5rem;
+}
+
+@media(min-width: 30rem) {
+  .cardPost {
+    padding: .75rem;
+  }
+
+  .cardPost_content_wrap {
+    display: inline-block;
+    height: 6.25rem;
+    width: 6.25rem;
+  }
+
+  .cardPost_content_info {
+    width: calc(100% - 8rem);
+  }
+
+  .cardPost_content_info_title {
+    font-size: 1rem;
+  }
 }
