@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { handleGetPostsById, handleGetComments } from "../actions";
 import CommentList from '../components/CommentList/CommentList';
 import CommentForm from '../components/CommentForm/CommentForm';
+import BoxForVote from '../components/BoxForVote/BoxForVote';
 import '../assets/css/Post.css';
 
 class Post extends Component {
@@ -32,7 +33,10 @@ class Post extends Component {
 
             <div className='postPage_subHeader'>
               <h3 className='postPage_subTitle'><strong>Author: </strong>{ this.props.post.author }</h3>
-              <span className='postPage_subHeader_tag'>#{ this.props.post.category }</span>
+              <div className='postPage_subTitle_box'>
+                <span className='postPage_subHeader_tag'>#{ this.props.post.category }</span>
+                <BoxForVote dados={ this.props.post } tipo={ 'posts' } />
+              </div>
             </div>
 
             <p className='postPage_text'>{ this.props.post.body }</p>

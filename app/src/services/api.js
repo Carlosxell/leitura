@@ -112,7 +112,10 @@ export const votePost = (data, option, path) => fetch(
   `${url}/${path}/${data}`,
   {
     method: 'post',
-    headers: headers,
+    headers: {
+      ...headers,
+      'Content-Type': 'application/json'
+    },
     body: JSON.stringify(option)
   }
 ).then(res => res.json()).then(data => data)

@@ -80,11 +80,8 @@ export const handleEditComment = (data) => (dispatch) => {
   }).catch(error => dispatch({ type: 'ERROR_API', error }))
 };
 
-export const handleVote = (data) => (dispatch) => {
-  console.info(data, 'resposta de votos')
-
-  /*api.votePost(data).then((res) => {
-    console.info(res, 'resposta de votos')
-    // dispatch({ type: VOTE });
-  }).catch(error => dispatch({ type: 'ERROR_API', error }))*/
+export const handleVote = (id, obj, path) => (dispatch) => {
+  api.votePost(id, obj, path).then((res) => {
+    dispatch({ type: VOTE });
+  }).catch(error => dispatch({ type: 'ERROR_API', error }))
 };
