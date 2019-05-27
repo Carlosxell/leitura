@@ -41,7 +41,13 @@ export const handleGetComments = (data) => (dispatch) => {
 };
 
 export const handleSetComment = (data) => (dispatch) => {
+  const id = data.parentId;
+
   api.createComment(data).then(async (result) => {
-    dispatch({ type: SET_COMMENTS, comments: result });
+    await api.getComments(data).then((result) => {
+      dispatch({ type: GET_COMMENTS, comments: result })
+    });
+
+    dispatch({ type: SET_COMMENTS });
   }).catch(error => dispatch({ type: 'ERROR_API', error }))
 };

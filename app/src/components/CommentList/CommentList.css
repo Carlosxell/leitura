@@ -19,8 +19,61 @@
   text-align: right;
 }
 
+.commentList_item:nth-child(even) .commentList_grid_info {
+  order: 2;
+}
+
+
 .commentList_item {}
+
+.commentList_grid {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.commentList_grid_info {}
+
+.commentList_grid_box {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.commentList_btn,
+.commentList_btn--danger {
+  border: none;
+  border-radius: .25rem;
+  color: initial;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 0 .125rem;
+  padding: .125rem .5rem;
+  transition: background-color .15s ease-in-out, color .15s ease-in-out, opacity .15s ease-in-out;
+}
+
+.commentList_btn:visited {
+  color: initial;
+}
+
+.commentList_btn:hover,
+.commentList_btn:focus {
+  background-color: rgba(204, 204, 204, .8);
+  color: rgba(25, 25, 25, .8);
+  text-decoration: none;
+}
+
+.commentList_btn--danger {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.commentList_btn--danger:hover,
+.commentList_btn--danger:focus {
+  opacity: .6;
+}
 
 .commentList_text {}
 
 .commentList_wrap_author {}
+
