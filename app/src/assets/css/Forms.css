@@ -1,10 +1,13 @@
 .form {
+  background-color: transparent;
   border: .063rem solid rgba(104, 104, 104, .6);
   border-radius: .25rem;
   outline: none;
   margin-bottom: .75rem;
+  min-height: 1.875rem;
   padding: .125rem .25rem;
   transition: border-color .15s ease-in-out;
+  text-transform: capitalize;
   resize: none;
   width: 100%;
 }
@@ -12,4 +15,14 @@
 .form:focus {
   border-color: dodgerblue;
   outline: none;
+}
+
+.form option,
+select.form {
+  text-transform: capitalize;
+}
+
+.label {
+  font-size: .875rem;
+  font-weight: 500;
 }

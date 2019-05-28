@@ -1,37 +1,25 @@
-.commentForm {}
+.formPost {}
 
-.commentForm_wrap {}
-
-.commentForm_grid {
+.formPost_gridA {
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.commentForm_grid_wrap {
-  width: calc(100% - 2.75rem);
-}
-
-.commentForm_label {
+.formPost_gridA_box,
+.boxForm {
   display: inline-block;
-  font-size: .875rem;
-  font-weight: 500;
-  padding-bottom: .75rem;
+  width: 100%;
 }
 
-.commentForm_input {}
-
-.commentForm_textArea {
-  margin-bottom: .25rem;
-}
-
-.commentForm_footer {
+.formPost_footer {
   display: flex;
   justify-content: flex-end;
   margin-bottom: .75rem;
 }
 
-.commentForm_btn {
+.formPost_btn {
   background-color: dodgerblue;
   color: rgba(0, 0, 0, .8);
   border: none;
@@ -43,12 +31,20 @@
   transition: background-color .15s ease-in-out, opacity .15s ease-in-out;
 }
 
-.commentForm_btn:disabled {
+.formPost_btn:disabled {
   background-color: rgba(204, 204, 204, 8);
   cursor: not-allowed;
 }
 
-.commentForm_btn:hover,
-.commentForm_btn:focus {
+.formPost_btn:hover,
+.formPost_btn:focus {
   opacity: .8;
+}
+
+.boxForm {}
+
+@media(min-width: 30rem) {
+  .formPost_gridA_box {
+    width: calc((100% / 2) - 1rem);
+  }
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
+import FormPost from '../components/FormPost/FormPost';
 
 class Posts extends Component {
   constructor(props) {
@@ -10,7 +10,7 @@ class Posts extends Component {
   render() {
     return (
       <div className="">
-        <h1>Add Posts</h1>
+        <FormPost />
       </div>
     );
   }
