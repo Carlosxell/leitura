@@ -9,7 +9,7 @@ class FormPost extends Component {
     super(props);
 
     this.state = {
-      category: '',
+      category: 'react',
       title: '',
       author: '',
       body: '',
@@ -36,7 +36,7 @@ class FormPost extends Component {
 
   componentWillReceiveProps(nextProps, nextContext) {
     if(nextProps.list) {
-      this.setState({ category: this.props.list[0] })
+      this.setState({ category: 'react' })
     }
 
     if(this.props.edicao) {
@@ -44,7 +44,7 @@ class FormPost extends Component {
         body: this.props.edicao.body,
         author: this.props.edicao.author,
         title:  this.props.edicao.title,
-        category:  this.props.edicao.category,
+        category:  this.props.edicao.category.name,
       })
     }
   }

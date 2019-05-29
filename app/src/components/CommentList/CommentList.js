@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import BoxForVote from '../BoxForVote/BoxForVote';
 import './CommentList.css'
 import { handleDeleteComment } from "../../actions";
 
@@ -17,6 +18,8 @@ class CommentList extends Component {
               </div>
 
               <div className='commentList_grid_box'>
+                <BoxForVote dados={ item } tipo={ 'comments' } />
+                <br />
                 <Link className='commentList_btn' to={`/edit-comment/${ item.id }`}>Edit</Link>
                 <br />
                 <button onClick={ () => this.props.deleteComment(item) } className='commentList_btn--danger' type='button'>Delete</button>
