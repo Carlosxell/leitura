@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './FormPost.css'
+import { withRouter } from 'react-router';
+import { handleSetPost, handleEditPost } from '../../actions';
+import './FormPost.css';
 
 class FormPost extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      select: '',
+      category: '',
       title: '',
       author: '',
-      bodyText: '',
+      body: '',
     };
 
     this.onSubmit = this.onSubmit.bind(this);
@@ -21,25 +23,57 @@ class FormPost extends Component {
     this.checkForBlock = this.checkForBlock.bind(this);
   }
 
-  componentWillReceiveProps(nextProps, nextContext) {
-    if(nextProps.list) {
-      this.setState({ select: this.props.list[0] })
+  componentDidMount() {
+    if(this.props.edicao) {
+      this.setState({
+        body: this.props.edicao.body,
+        author: this.props.edicao.author,
+        title:  this.props.edicao.title,
+        category:  this.props.edicao.category,
+      })
     }
   }
 
-  onSubmit(e) {
-    e.preventDefault();
+  componentWillReceiveProps(nextProps, nextContext) {
+    if(nextProps.list) {
+      this.setState({ category: this.props.list[0] })
+    }
+
+    if(this.props.edicao) {
+      this.setState({
+        body: this.props.edicao.body,
+        author: this.props.edicao.author,
+        title:  this.props.edicao.title,
+        category:  this.props.edicao.category,
+      })
+    }
   }
 
-  changeBody(e) { this.setState({ bodyText: e.target.value }) }
-  changeSelect(e) { this.setState({ select: e.target.value }) }
+  async onSubmit(e) {
+    let obj = {};
+    e.preventDefault();
+
+    if(!this.props.edicao) {
+      obj.id = Math.random().toString(36).substr(-8);
+      obj.timestamp = (new Date()).toISOString();
+
+      await this.props.setPost({ ...obj, ...this.state });
+      return this.props.history.push('/');
+    }
+
+    await this.props.editPost(Object.assign({}, this.props.edicao, this.state));
+    return this.props.history.push(`/post/${this.props.edicao.id}`);
+  }
+
+  changeBody(e) { this.setState({ body: e.target.value }) }
+  changeSelect(e) { this.setState({ category: e.target.value }) }
   changeTitle(e) { this.setState({ title: e.target.value }) }
   changeAuthor(e) { this.setState({ author: e.target.value }) }
 
   checkForBlock() {
     let title = (this.state.title.length > 2);
     let author = (this.state.author.length > 2);
-    let body = (this.state.bodyText.length > 2);
+    let body = (this.state.body.length > 2);
 
     return (title && author && body);
   }
@@ -81,7 +115,7 @@ class FormPost extends Component {
                       className='form'
                       name='categoria'
                       id='categoria'
-                      value={ this.state.select }>
+                      value={ this.state.category }>
                 { list.length ? (
                   list.map((item, ind) => ( <option key={ ind } value={ item.name }>{ item.name }</option> ))
                 ) : (<option value=''>Selecione</option>) }
@@ -96,7 +130,7 @@ class FormPost extends Component {
                       id='body'
                       placeholder='Descrição do post'
                       rows='6'
-                      value={ this.state.bodyText }></textarea>
+                      value={ this.state.body }></textarea>
           </div>
         </div>
 
@@ -104,7 +138,7 @@ class FormPost extends Component {
           <button onClick={ this.onSubmit }
                   className='formPost_btn'
                   disabled={ !this.checkForBlock() }
-                  type='submit'>Cadastrar</button>
+                  type='submit'>{ this.props.edicao ? 'Editar' : 'Cadastrar' }</button>
         </div>
       </form>
     );
@@ -112,6 +146,9 @@ class FormPost extends Component {
 }
 
 const mapStateToProps = store => ({ list: store.categories.list });
-const mapDispatchToProps = (dispatch) => ({});
+const mapDispatchToProps = (dispatch) => ({
+  setPost: (data) => dispatch(handleSetPost(data)),
+  editPost: (data) => dispatch(handleEditPost(data))
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(FormPost);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(FormPost));

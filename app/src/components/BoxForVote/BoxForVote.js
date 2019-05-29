@@ -16,14 +16,16 @@ class BoxForVote extends Component {
     this.downVote = this.downVote.bind(this);
   }
 
+  componentWillMount() {
+    this.setVotesVal(this.props.dados);
+  }
+
   componentDidMount() {
-    if(this.props.dados) {
-      this.setVotesVal(this.props.dados);
-    }
+    this.setVotesVal(this.props.dados);
   }
 
   componentWillReceiveProps(nextProps, nextContext) {
-    this.setVotesVal(nextProps);
+    this.setVotesVal(this.props.dados);
   }
 
   setVotesVal(obj) {

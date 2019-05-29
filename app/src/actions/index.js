@@ -2,6 +2,9 @@ import * as api from '../services/api';
 import {
   GET_CATEGORIES,
   GET_POSTS,
+  SET_POST,
+  EDIT_POST,
+  DELETE_POST,
   VOTE,
   GET_POSTS_BY_CATEGORY,
   GET_POSTS_BY_ID,
@@ -83,5 +86,23 @@ export const handleEditComment = (data) => (dispatch) => {
 export const handleVote = (id, obj, path) => (dispatch) => {
   api.votePost(id, obj, path).then((res) => {
     dispatch({ type: VOTE });
+  }).catch(error => dispatch({ type: 'ERROR_API', error }))
+};
+
+export const handleSetPost = (data) => (dispatch) => {
+  api.createPost(data).then((res) => {
+    dispatch({ type: SET_POST });
+  }).catch(error => dispatch({ type: 'ERROR_API', error }))
+};
+
+export const handleEditPost = (data) => (dispatch) => {
+  api.editPost(data).then((res) => {
+    dispatch({ type: EDIT_POST });
+  }).catch(error => dispatch({ type: 'ERROR_API', error }))
+};
+
+export const handleDeletePost = (data) => (dispatch) => {
+  api.deletePost(data).then((res) => {
+    dispatch({ type: DELETE_POST });
   }).catch(error => dispatch({ type: 'ERROR_API', error }))
 };
